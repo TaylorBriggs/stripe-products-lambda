@@ -1,6 +1,6 @@
 # stripe-products-lambda
 
-A Lambda function for fetching Stripe products as part of a [Stripe Relay](relay) flow.
+A Lambda function for fetching Stripe products as part of a [Stripe Relay][relay] flow.
 
 NOTE: this function is designed to only return `active` products.
 
@@ -21,7 +21,7 @@ Use the script to create your zip archive:
 $ npm run zip
 ```
 
-Integrate with the [AWS API Gateway](gateway) to access the function via HTTP POST:
+Integrate with the [AWS API Gateway][gateway] to access the function via HTTP POST:
 
 ```
 $ curl -H "Content-Type: application/json" $API_GATEWAY_URL
@@ -29,7 +29,7 @@ $ curl -H "Content-Type: application/json" $API_GATEWAY_URL
 
 ### Response
 
-Returns `products.data` from the [response](products) under the root key of `products`:
+Returns `products.data` from the [response][products] under the root key of `products`:
 
 ```
 {
