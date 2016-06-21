@@ -3,14 +3,14 @@ require('dotenv').load();
 var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 var handler = require('../index').handler;
 
-var context = {
-  fail: function(err) {
-    console.error('Filed: ', err);
-  },
+var context = {};
 
-  succeed: function(response) {
-    console.log('Success: ', response);
+function handleResponse(err, data) {
+  if (err) {
+    console.error('Failed: ', err);
+  } else {
+    console.log('Succeeded: ', data);
   }
-};
+}
 
-return handler({}, context);
+return handler({}, context, handleResponse);
